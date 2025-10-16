@@ -1,0 +1,23 @@
+[project]
+name = 'okonkwocoin-contract'
+description = 'Okonkwocoin - A SIP-010 compliant fungible token representing strength and determination in the Stacks ecosystem'
+authors = ['Anthony']
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts.okonkwocoin]
+path = 'contracts/okonkwocoin.clar'
+clarity_version = 3
+epoch = 'latest'
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'
