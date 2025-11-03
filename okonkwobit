@@ -1,4 +1,4 @@
-# okonkwocoin
+# okonkwobit
 
 Okonkwobit smart contract project managed with Clarinet.
 
@@ -14,30 +14,29 @@ Okonkwobit smart contract project managed with Clarinet.
   - `get-balance (who principal) -> uint`
   - `get-total-supply () -> uint`
 
-## Requirements
-- Node.js (for tests)
-- Clarinet CLI: `npm i -g @hirosystems/clarinet`
-- Verify install: `clarinet --version`
+## Install Clarinet
+- `npm i -g @hirosystems/clarinet`
+- Verify: `clarinet --version`
 
-## Quick start
+## Usage
 - Typecheck/compile: `clarinet check`
-- Open REPL: `clarinet console`
-  - In console you can select an account with `.use deployer` and call:
+- REPL: `clarinet console`
+  - Example calls (from console):
     - `(contract-call? .okonkwobit mint u1000 '<recipient-principal>)`
     - `(contract-call? .okonkwobit transfer u250 '<sender-principal> '<recipient-principal>)`
     - `(contract-call? .okonkwobit set-owner '<new-owner-principal>)`
-    - `(contract-call? .okonkowbit ...)` calls return `(ok ...)` or `(err u403)` on unauthorized actions.
+  - Unauthorized actions return `(err u403)`
 
 ## Testing
-- Install dev deps: `npm install`
+- Install deps: `npm install`
 - Run tests: `npm test`
-- Watch (optional): `npm run test:watch`
+- Watch: `npm run test:watch`
 
 ## Project structure
 - `contracts/` — Clarity contracts (main: `okonkwobit.clar`)
 - `tests/` — TypeScript tests with `vitest`
-- `settings/` — `Devnet.toml`, `Testnet.toml`, `Mainnet.toml`
-- `Clarinet.toml` — project/contract registration
+- `settings/` — devnet/testnet/mainnet configs
+- `Clarinet.toml` — project and contract registration
 
 ## License
 See `LICENSE`.
